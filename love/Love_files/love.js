@@ -147,7 +147,7 @@
             ctx.scale(scale, scale);
             ctx.beginPath();
             ctx.moveTo(0, 0);
-            ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    	    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
@@ -162,8 +162,8 @@
             ctx.translate(point.x, point.y);
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
-            ctx.lineTo(15, 15);
-            ctx.lineTo(60, 15);
+    	    ctx.lineTo(15, 15);
+    	    ctx.lineTo(60, 15);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
@@ -206,8 +206,8 @@
             ctx.translate(point.x, point.y);
             ctx.beginPath();
             ctx.moveTo(0, 0);
-            ctx.lineTo(len, 0);
-            ctx.lineTo(-len, 0);
+    	    ctx.lineTo(len, 0);
+    	    ctx.lineTo(-len, 0);
             ctx.stroke();
             ctx.restore();
 
@@ -287,16 +287,16 @@
 
             ctx.save();
             ctx.putImageData(image, point.x, point.y);
-            ctx.restore();
+        	ctx.restore();
         },
 
         addBranch: function(branch) {
-            this.branchs.push(branch);
+        	this.branchs.push(branch);
         },
 
         addBranchs: function(branchs){
             var s = this, b, p1, p2, p3, r, l, c;
-            for (var i = 0; i < branchs.length; i++) {
+        	for (var i = 0; i < branchs.length; i++) {
                 b = branchs[i];
                 p1 = new Point(b[0], b[1]);
                 p2 = new Point(b[2], b[3]);
@@ -310,9 +310,9 @@
 
         removeBranch: function(branch) {
             var branchs = this.branchs;
-            for (var i = 0; i < branchs.length; i++) {
-                if (branchs[i] === branch) {
-                    branchs.splice(i, 1);
+        	for (var i = 0; i < branchs.length; i++) {
+        		if (branchs[i] === branch) {
+        			branchs.splice(i, 1);
                 }
             }
         },
@@ -322,7 +322,7 @@
         },
         grow: function() {
             var branchs = this.branchs;
-            for (var i = 0; i < branchs.length; i++) {
+    	    for (var i = 0; i < branchs.length; i++) {
                 var branch = branchs[i];
                 if (branch) {
                     branch.grow();
@@ -396,7 +396,7 @@
             ctx.save();
             ctx.clearRect(point.x, point.y, width, height);
             ctx.putImageData(image, i, j);
-            ctx.restore();
+        	ctx.restore();
 
             rec.point = new Point(i, j);
             rec.speed = speed * 0.95;
